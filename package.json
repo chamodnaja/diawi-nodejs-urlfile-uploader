@@ -1,0 +1,82 @@
+{
+  "name": "diawi-nodejs-uploader",
+  "version": "1.1.1",
+  "author": "Andrey Ponomarenko",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "A nodejs integration with Diawi app distribution api",
+  "license": "MIT",
+  "repository": {
+    "url": "git@github.com:Natteke/diawi-nodejs-uploader.git"
+  },
+  "keywords": [
+    "ipa",
+    "apk",
+    "diawi",
+    "nodejs",
+    "node",
+    "api",
+    "upload",
+    "mobile",
+    "app",
+    "ci",
+    "cd",
+    "too;"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "branches": [
+      "master"
+    ]
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "package.json",
+    "package-lock.json"
+  ],
+  "scripts": {
+    "r": "yarn webpack && node dist/index.js",
+    "build": "tsc && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "release": "node scripts/release.js"
+  },
+  "dependencies": {
+    "form-data": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.1.1",
+    "@semantic-release/npm": "^7.0.6",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "@types/fs-extra": "^9.0.1",
+    "@types/node-fetch": "^2.5.7",
+    "@types/promise.allsettled": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "declaration-bundler-webpack-plugin": "^1.0.3",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.4",
+    "husky": "^4.3.0",
+    "semantic-release": "^17.1.2",
+    "ts-loader": "^8.0.2",
+    "tscpaths": "^0.0.9",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
